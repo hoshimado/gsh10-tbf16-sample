@@ -32,8 +32,6 @@ onMounted(()=>{
         loading page...
     </div>
     <div id="id_signup_section" v-if="isDataLoaded"><!-- ロード時に毎回初期化処理が走ってほしいので、showではなくifとする -->
-        Hello World!
-        <hr>
         <TimerPanel 
           v-bind:manageToDoTimerData="manageToDoTimerData"
         ></TimerPanel>
