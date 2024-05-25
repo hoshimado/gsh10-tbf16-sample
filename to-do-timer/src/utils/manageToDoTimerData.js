@@ -38,7 +38,7 @@ ManageTimePeriod.prototype.pause = function () {
     return false;
 };
 ManageTimePeriod.prototype.restart = function () {
-    if(this._status = ManageTimePeriod.IS_PAUSE){
+    if(this._status == ManageTimePeriod.IS_PAUSE){
         this._status = ManageTimePeriod.IS_RUNNING;
         this._lastReStartedAtSec = Math.floor(Date.now() / 1000);    
         return true;
