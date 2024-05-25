@@ -19,35 +19,15 @@ function _secondsToMMSS(seconds) { // ToDo: utilsフォルダー配下に移動�
     return `${formattedMinutes}:${formattedSeconds}`;
 }
 const updateValue = function () {
-    const data = props.manageToDoTimerData.getTimerData();
-    remainSecText.value = _secondsToMMSS(data.remainSec);
-    totalSecText.value = _secondsToMMSS(data.totalSec);
-    titleText.value = data.titleText;
-    statusText.value = data.statusText;
-
-    // ToDo: タイムアップ・トリガーが為されたら、音を鳴らした。。
-    // https://zenn.dev/r9uk0/articles/aabba05e827c53
-
-    setTimeout(() => {
-        updateValue();
-    }, 1000);
+    remainSecText.value = _secondsToMMSS(0);
+    totalSecText.value = _secondsToMMSS(1500);
+    titleText.value = '未実装';
+    statusText.value = 'Not Working';
 }
 
 onMounted(()=>{
-    props.manageToDoTimerData.setTimerData().setTimerMaxSeconds(25*60);
-    pomodoroTimerStartNew();
-
-    setTimeout(() => {
-        updateValue();
-    }, 1);
+    updateValue();
 });
-
-const pomodoroTimerStartNew = function () {
-    props.manageToDoTimerData.setTimerData().startNew();
-}
-const pomodoroTimerStop = function () {
-    props.manageToDoTimerData.setTimerData().stop();
-}
 </script>
 
 
@@ -66,12 +46,12 @@ const pomodoroTimerStop = function () {
     <div class="timer-button-container">
         <div class="timer-button-group">
             <div>
-                <button type="button" class="btn btn-primary" v-on:click="pomodoroTimerStartNew">開始</button>
+                <button type="button" class="btn btn-primary" disabled>開始</button>
             </div>
         </div>
         <div class="timer-button-group">
             <div>
-                <button type="button" class="btn btn-primary" v-on:click="pomodoroTimerStop">終了</button>
+                <button type="button" class="btn btn-primary" disabled>終了</button>
             </div>
         </div>
     </div>
