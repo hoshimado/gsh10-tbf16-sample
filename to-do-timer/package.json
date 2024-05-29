@@ -6,15 +6,19 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint   ./src",
+    "test:mocha": "cross-env NODE_ENV=test   mocha --recursive --timeout 3000"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
     "vue": "^3.4.21"
   },
   "devDependencies": {
+    "@eslint/js": "^9.1.1",
     "@vitejs/plugin-vue": "^5.0.4",
-    "cross-env": "^7.0.3",
+    "eslint": "^9.1.1",
+    "eslint-plugin-vue": "^9.25.0",
     "globals": "^15.1.0",
     "vite": "^5.2.8"
   }
