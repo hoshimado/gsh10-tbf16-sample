@@ -14,10 +14,8 @@ const isDataLoaded = ref(false);
 
 onMounted(()=>{
     setTimeout(() => {
-        if(props.manageToDoTimerData.isModeStandalone()){
-            isCreating1st.value = false;
-            isDataLoaded.value = true;
-        }
+        isCreating1st.value = false;
+        isDataLoaded.value = true;
         // スタンドアロン以外のモード(クラウドにデータを保持など）の場合は、
         // 以下にelse分で初期処理（ログインなど）を実装する
     }, 1000);
