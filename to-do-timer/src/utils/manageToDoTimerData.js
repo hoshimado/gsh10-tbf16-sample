@@ -28,6 +28,23 @@ ManageTimePeriod.prototype.startNew = function () {
     this._status = ManageTimePeriod.IS_RUNNING;
     return true;
 };
+ManageTimePeriod.prototype.pause = function () {
+    if(this._status == ManageTimePeriod.IS_RUNNING){
+        this._status = ManageTimePeriod.IS_PAUSE;
+        this._elapsedSecondsBeforeReStarted += this.getPassedSecondsAfterRestart();
+        this._lastReStartedAtSec = Math.floor(Date.now() / 1000);    
+        return true;
+    }
+    return false;
+};
+ManageTimePeriod.prototype.restart = function () {
+    if(this._status == ManageTimePeriod.IS_PAUSE){
+        this._status = ManageTimePeriod.IS_RUNNING;
+        this._lastReStartedAtSec = Math.floor(Date.now() / 1000);    
+        return true;
+    }
+    return false;
+};
 ManageTimePeriod.prototype.stop = function () {
     this._status = ManageTimePeriod.IS_STOP;
     this._elapsedSecondsBeforeReStarted += this.getPassedSecondsAfterRestart();
@@ -39,8 +56,8 @@ ManageTimePeriod.prototype.getStatus = function () {
 }
 
 ManageTimePeriod.prototype.getPassedSecondsAfterRestart = function () {
-    var nowUnixTimeSec = Math.floor(Date.now() / 1000);
-    var timeDifference = nowUnixTimeSec - this._lastReStartedAtSec;
+    const nowUnixTimeSec = Math.floor(Date.now() / 1000);
+    const timeDifference = nowUnixTimeSec - this._lastReStartedAtSec;
 
     return timeDifference;
 }
@@ -84,6 +101,10 @@ ManageToDoTimerData.prototype.getTimerData = function () {
     switch (timerApi.getStatus()) {
         case ManageTimePeriod.IS_RUNNING:
             statusText = 'Running';
+            break;
+    
+        case ManageTimePeriod.IS_PAUSE:
+            statusText = 'Pausing';
             break;
 
         case ManageTimePeriod.IS_STOP:

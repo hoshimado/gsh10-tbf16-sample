@@ -45,6 +45,12 @@ onMounted(()=>{
 const pomodoroTimerStartNew = function () {
     props.manageToDoTimerData.setTimerData().startNew();
 }
+const pomodoroTimerPause = function () {
+    props.manageToDoTimerData.setTimerData().pause();
+}
+const pomodoroTimerRestart = function () {
+    props.manageToDoTimerData.setTimerData().restart();
+}
 const pomodoroTimerStop = function () {
     props.manageToDoTimerData.setTimerData().stop();
 }
@@ -67,6 +73,12 @@ const pomodoroTimerStop = function () {
         <div class="timer-button-group">
             <div>
                 <button type="button" class="btn btn-primary" v-on:click="pomodoroTimerStartNew">開始</button>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary" v-on:click="pomodoroTimerPause">一時停止</button>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary" v-on:click="pomodoroTimerRestart">再開</button>
             </div>
         </div>
         <div class="timer-button-group">
