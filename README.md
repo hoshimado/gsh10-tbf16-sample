@@ -19,7 +19,8 @@
 * §2.1：ビルドの効率化
   * [chapter2section1-build-ok](https://github.com/hoshimado/gsh10-tbf16-sample/tree/chapter2section1-build-ok)
 * §2.2：静的テスト強化による高品質化と効率化
-  * ToDo: 対象ブランチへのリンクを追加
+  * Lint適用（指摘事項は未修正）: [chapter2section2-static-verification1-ng](https://github.com/hoshimado/gsh10-tbf16-sample/tree/chapter2section2-static-verification1-ng)
+  * Lintでの指摘事項を修正済み、コード検証（Lint）の適用を自動化: [chapter2section2-static-verification2-ok](https://github.com/hoshimado/gsh10-tbf16-sample/tree/chapter2section2-static-verification2-ok)
 * §2.3：動的テスト強化による高品質化と効率化
   * ToDo: 対象ブランチへのリンクを追加
 
