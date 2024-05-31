@@ -12,6 +12,17 @@
 
 ※リンク先はbranchです。1章にはサンプルコードはありません。
 
+## サンプルコードの取得方法
+
+clone後にそれぞれのブランチ切り替えるか、
+下記のリンクでそれぞれのブランチに移動後にボタン「Code ＞ Download ZIP」からZipファイルとして取得し、任意のフォルダに展開してください。
+
+何れの場合も、以下のリンク先で案内のあるコマンドの実行前に、フォルダー「`to-do-timer`」の直下で必要な依存モジュールをインストールするために、
+次のコマンドを実行してください。
+
+```
+npm install
+```
 
 
 # 2章
@@ -22,6 +33,7 @@
   * Lint適用（指摘事項は未修正）: [chapter2section2-static-verification1-ng](https://github.com/hoshimado/gsh10-tbf16-sample/tree/chapter2section2-static-verification1-ng)
   * Lintでの指摘事項を修正済み、コード検証（Lint）の適用を自動化: [chapter2section2-static-verification2-ok](https://github.com/hoshimado/gsh10-tbf16-sample/tree/chapter2section2-static-verification2-ok)
 * §2.3：動的テスト強化による高品質化と効率化
-  * ToDo: 対象ブランチへのリンクを追加
+  * テストコードによる単体テストを追加：[chapter2section3-dynamic-testing1-fail](https://github.com/hoshimado/gsh10-tbf16-sample/tree/chapter2section3-dynamic-testing1-fail)
+  * 単体テストの実行を自動化：[chapter2section3-dynamic-testing2-success](https://github.com/hoshimado/gsh10-tbf16-sample/tree/chapter2section3-dynamic-testing2-success)
 
 
