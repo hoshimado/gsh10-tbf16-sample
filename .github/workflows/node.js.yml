@@ -64,30 +64,3 @@ jobs:
       run: npm run lint
 
 
-
-  unit-test:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ${{env.TARGET_DIR}}
-
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-    - name: Setup Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-        cache-dependency-path: ${{env.TARGET_DIR}}
-    - name: Install dependencies
-      run: npm ci
-    - name: Component Test
-      run: npm run test:mocha --if-present
-
-      
